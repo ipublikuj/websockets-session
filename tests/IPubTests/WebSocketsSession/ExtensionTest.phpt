@@ -26,6 +26,7 @@ use IPub;
 use IPub\WebSocketsSession;
 
 require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.php';
+require __DIR__ . DS . 'libraries' . DS . 'Application.php';
 
 /**
  * WebSockets session extension container test case

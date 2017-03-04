@@ -3,3 +3,5 @@ extensions:
 	webSockets : IPub\WebSockets\DI\WebSocketsExtension
 	webSocketsSession : IPub\WebSocketsSession\DI\WebSocketsSessionExtension
 
+services:
+	- IPubTests\WebSockets\Libraries\Application
