@@ -21,7 +21,7 @@ After that you have to register extension in config.neon.
 
 ```neon
 extensions:
-	websocketsSession: IPub\WebSocketsSession\DI\WebSocketsSessionExtension
+	webSocketsSession: IPub\WebSocketsSession\DI\WebSocketsSessionExtension
 ```
 
 ## Documentation
