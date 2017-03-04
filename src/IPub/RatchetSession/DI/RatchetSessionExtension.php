@@ -132,7 +132,7 @@ final class WebSocketsSessionExtension extends DI\CompilerExtension
 	 *
 	 * @return void
 	 */
-	public static function register(Nette\Configurator $config, string $extensionName = 'websocketsSession')
+	public static function register(Nette\Configurator $config, string $extensionName = 'webSocketsSession')
 	{
 		$config->onCompile[] = function (Nette\Configurator $config, DI\Compiler $compiler) use ($extensionName) {
 			$compiler->addExtension($extensionName, new WebSocketsSessionExtension());

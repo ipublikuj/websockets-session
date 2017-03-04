@@ -1,6 +1,6 @@
 <?php
 /**
- * Test: IPub\WebSocketssSession\Extension
+ * Test: IPub\WebSocketsSession\Extension
  * @testCase
  *
  * @copyright      More in license.md
@@ -15,7 +15,7 @@
 
 declare(strict_types = 1);
 
-namespace IPubTests\WebSockets;
+namespace IPubTests\WebSocketsSession;
 
 use Nette;
 
@@ -41,15 +41,15 @@ class ExtensionTest extends Tester\TestCase
 	{
 		$dic = $this->createContainer();
 
-		Assert::true($dic->getService('websocketsSession.serializer.session') instanceof IPub\WebSocketsSession\Serializers\ISessionSerializer);
+		Assert::true($dic->getService('webSocketsSession.serializer.session') instanceof IPub\WebSocketsSession\Serializers\ISessionSerializer);
 
-		Assert::true($dic->getService('websocketsSession.users.repository') instanceof IPub\WebSocketsSession\Users\IRepository);
+		Assert::true($dic->getService('webSocketsSession.users.repository') instanceof IPub\WebSocketsSession\Users\IRepository);
 
 		Assert::true($dic->getService('session') instanceof IPub\WebSocketsSession\Session\SwitchableSession);
 
-		Assert::true($dic->getService('websocketsSession.events.onClientConnected') instanceof IPub\WebSocketsSession\Events\OnClientConnectedHandler);
-		Assert::true($dic->getService('websocketsSession.events.onClientDisconnected') instanceof IPub\WebSocketsSession\Events\OnClientDisconnectedHandler);
-		Assert::true($dic->getService('websocketsSession.events.onIncomingMessage') instanceof IPub\WebSocketsSession\Events\OnIncomingMessageHandler);
+		Assert::true($dic->getService('webSocketsSession.events.onClientConnected') instanceof IPub\WebSocketsSession\Events\OnClientConnectedHandler);
+		Assert::true($dic->getService('webSocketsSession.events.onClientDisconnected') instanceof IPub\WebSocketsSession\Events\OnClientDisconnectedHandler);
+		Assert::true($dic->getService('webSocketsSession.events.onIncomingMessage') instanceof IPub\WebSocketsSession\Events\OnIncomingMessageHandler);
 	}
 
 	/**
