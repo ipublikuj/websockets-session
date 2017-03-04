@@ -1,0 +1,5 @@
+extensions:
+	console	: Kdyby\Console\DI\ConsoleExtension
+	websockets : IPub\WebSockets\DI\WebSocketsExtension
+	websocketsSession : IPub\WebSocketsSession\DI\WebSocketsSessionExtension
+

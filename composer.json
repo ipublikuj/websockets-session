@@ -1,0 +1,61 @@
+{
+	"name"			: "ipub/websockets-session",
+	"type"			: "library",
+	"description"	: "Extension for implementing sessions into ipub/websockets server",
+	"keywords"		: ["nette", "websockets", "session", "ipub", "ipublikuj", "framework", "tools"],
+	"homepage"		: "https://github.com/iPublikuj/websockets-session",
+	"license"		: ["GPL-2.0", "GPL-3.0"],
+
+	"authors": [
+		{
+			"name"		: "iPublikuj:cms",
+			"email"		: "info@ipublikuj.eu",
+			"homepage"	: "http://www.ipublikuj.eu/"
+		}
+	],
+
+	"support":{
+		"email"		:"support@ipublikuj.eu",
+		"issues"	:"https://github.com/iPublikuj/websockets-session/issues"
+	},
+
+	"extra": {
+		"ipub"	: {
+			"configuration" : {
+				"extensions" : {
+					"webSocketsSession" : "IPub\\WebSocketsSession\\DI\\WebSocketsSessionExtension"
+				}
+			}
+		}
+	},
+
+	"require": {
+		"php"	: ">=7.0.0",
+
+		"nette/di"			: "~2.4",
+		"nette/http"		: "~2.4",
+		"nette/security"	: "~2.4",
+
+		"ipub/websockets": "~1.0.0",
+
+		"pds/skeleton"	: "^1.0",
+
+		"psr/log"	: "~1.0"
+	},
+
+	"require-dev": {
+		"nette/bootstrap"		: "~2.4",
+		"nette/mail"			: "~2.4",
+		"nette/robot-loader"	: "~2.4",
+		"nette/safe-stream"		: "~2.3",
+		"nette/tester"			: "@dev",
+
+		"tracy/tracy"	: "@dev"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"IPub\\WebSocketsSession\\": "src/"
+		}
+	}
+}
