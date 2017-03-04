@@ -7,11 +7,11 @@
 [![Composer Downloads](https://img.shields.io/packagist/dt/ipub/websockets-session.svg?style=flat-square)](https://packagist.org/packages/ipub/websockets-session)
 [![License](https://img.shields.io/packagist/l/ipub/websockets-session.svg?style=flat-square)](https://packagist.org/packages/ipub/websockets-session)
 
-Extension for implementing [Nette Framework sessions](http://nette.org/) into [WebSockets](http://socketo.me/) 
+Extension for implementing [Nette Framework sessions](http://nette.org/) into [ipub/websockets](https://github.com/iPublikuj/websockets) 
 
 ## Installation
 
-The best way to install ipub/websockets-session is using  [Composer](http://getcomposer.org/):
+The best way to install ipub/websockets-session is using [Composer](http://getcomposer.org/):
 
 ```sh
 $ composer require ipub/websockets-session
