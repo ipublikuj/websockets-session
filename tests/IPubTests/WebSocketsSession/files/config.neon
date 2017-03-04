@@ -4,4 +4,4 @@ extensions:
 	webSocketsSession : IPub\WebSocketsSession\DI\WebSocketsSessionExtension
 
 services:
-	- IPubTests\WebSockets\Libraries\Application
+	- IPubTests\WebSocketsSession\Libraries\Application
