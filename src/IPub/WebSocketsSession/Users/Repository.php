@@ -17,14 +17,11 @@ declare(strict_types = 1);
 namespace IPub\WebSocketsSession\Users;
 
 use Nette;
-use Nette\Security as NS;
 
 use IPub;
-use IPub\WebSockets\Clients;
-use IPub\WebSockets\Entities;
-use IPub\WebSockets\Exceptions;
-
+use IPub\WebSockets\Clients as WebSocketsClients;
 use IPub\WebSockets\Entities as WebSocketsEntities;
+use IPub\WebSockets\Exceptions as WebSocketsExceptions;
 
 /**
  * Connected users repository
@@ -42,14 +39,14 @@ final class Repository implements IRepository
 	use Nette\SmartObject;
 
 	/**
-	 * @var Clients\IStorage
+	 * @var WebSocketsClients\IStorage
 	 */
 	private $storage;
 
 	/**
-	 * @param Clients\IStorage $storage
+	 * @param WebSocketsClients\IStorage $storage
 	 */
-	public function __construct(Clients\IStorage $storage)
+	public function __construct(WebSocketsClients\IStorage $storage)
 	{
 		$this->storage = $storage;
 	}
@@ -57,12 +54,12 @@ final class Repository implements IRepository
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getUser(Entities\Clients\IClient $client)
+	public function getUser(WebSocketsEntities\Clients\IClient $client)
 	{
 		try {
 			return $client->getUser();
 
-		} catch (Exceptions\ClientNotFoundException $ex) {
+		} catch (WebSocketsExceptions\ClientNotFoundException $ex) {
 			return NULL;
 		}
 	}
@@ -74,7 +71,7 @@ final class Repository implements IRepository
 	 */
 	public function findByUsername(string $username)
 	{
-		/** @var Entities\Clients\IClient $client */
+		/** @var WebSocketsEntities\Clients\IClient $client */
 		foreach ($this->storage as $client) {
 			$user = $client->getUser();
 
@@ -100,7 +97,7 @@ final class Repository implements IRepository
 	 */
 	public function findById($userId)
 	{
-		/** @var Entities\Clients\IClient $client */
+		/** @var WebSocketsEntities\Clients\IClient $client */
 		foreach ($this->storage as $client) {
 			$user = $client->getUser();
 
@@ -128,7 +125,7 @@ final class Repository implements IRepository
 	{
 		$results = [];
 
-		/** @var Entities\Clients\IClient $client */
+		/** @var WebSocketsEntities\Clients\IClient $client */
 		foreach ($this->storage as $client) {
 			$user = $client->getUser();
 
@@ -154,7 +151,7 @@ final class Repository implements IRepository
 	{
 		$results = [];
 
-		/** @var Entities\Clients\IClient $client */
+		/** @var WebSocketsEntities\Clients\IClient $client */
 		foreach ($this->storage as $client) {
 			$user = $client->getUser();
 
