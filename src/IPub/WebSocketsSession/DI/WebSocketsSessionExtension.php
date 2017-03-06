@@ -119,10 +119,15 @@ final class WebSocketsSessionExtension extends DI\CompilerExtension
 				->setClass(Events\OnIncomingMessageHandler::class)
 				->setArguments(['session' => $switchableSession]);
 
+			$builder->addDefinition($this->prefix('events.onAfterIncomingMessage'))
+				->setClass(Events\OnAfterIncomingMessageHandler::class)
+				->setArguments(['session' => $switchableSession]);
+
 			$serverWrapper = $builder->getDefinitionByType(IPub\WebSockets\Server\Wrapper::class);
 			$serverWrapper->addSetup('$service->onClientConnected[] = ?', ['@' . $this->prefix('events.onClientConnected')]);
 			$serverWrapper->addSetup('$service->onClientDisconnected[] = ?', ['@' . $this->prefix('events.onClientDisconnected')]);
 			$serverWrapper->addSetup('$service->onIncomingMessage[] = ?', ['@' . $this->prefix('events.onIncomingMessage')]);
+			$serverWrapper->addSetup('$service->onAfterIncomingMessage[] = ?', ['@' . $this->prefix('events.onAfterIncomingMessage')]);
 		}
 	}
 

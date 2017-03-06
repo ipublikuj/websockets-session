@@ -1,6 +1,6 @@
 <?php
 /**
- * OnIncomingMessageHandler.php
+ * OnAfterIncomingMessageHandler.php
  *
  * @copyright      More in license.md
  * @license        http://www.ipublikuj.eu
@@ -9,7 +9,7 @@
  * @subpackage     Events
  * @since          1.0.0
  *
- * @date           19.02.17
+ * @date           05.03.17
  */
 
 declare(strict_types = 1);
@@ -32,7 +32,7 @@ use IPub\WebSockets\Http as WebSocketsHttp;
  *
  * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  */
-final class OnIncomingMessageHandler
+final class OnAfterIncomingMessageHandler
 {
 	/**
 	 * Implement nette smart magic
@@ -56,18 +56,13 @@ final class OnIncomingMessageHandler
 	/**
 	 * @param WebSocketsEntities\Clients\IClient $from
 	 * @param WebSocketsHttp\IRequest $httpRequest
-	 * @param string $message
 	 *
 	 * @return void
 	 */
-	public function __invoke(WebSocketsEntities\Clients\IClient $from, WebSocketsHttp\IRequest $httpRequest, string $message)
+	public function __invoke(WebSocketsEntities\Clients\IClient $from, WebSocketsHttp\IRequest $httpRequest)
 	{
 		if ($this->session instanceof Session\SwitchableSession) {
-			$this->session->attach($from, $httpRequest);
-
-			if (!$this->session->isStarted()) {
-				$this->session->start();
-			}
+			$this->session->detach();
 		}
 	}
 }
