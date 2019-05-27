@@ -36,9 +36,7 @@
 		"nette/http"		: "~2.4",
 		"nette/security"	: "~2.4",
 
-		"ipub/websockets": "~1.0.1",
-
-		"pds/skeleton"	: "^1.0",
+		"ipub/websockets": "^1.0",
 
 		"psr/log"	: "~1.0"
 	},
@@ -49,6 +47,8 @@
 		"nette/robot-loader"	: "~2.4",
 		"nette/safe-stream"		: "~2.3",
 		"nette/tester"			: "@dev",
+
+		"pds/skeleton"	: "^1.0",
 
 		"tracy/tracy"	: "@dev"
 	},
